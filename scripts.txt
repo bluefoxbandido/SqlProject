@@ -3,28 +3,28 @@ SELECT * FROM school_sql_project_schema.grades;
 SELECT
 AVG(grade), 
 grade_professor_id
-from grades
-group by grade_professor_id;
+FROM grades
+GROUP BY grade_professor_id;
 
 SELECT 
 MAX(grade),
 grade_student_id
-from grades
-group by grade_student_id;
+FROM grades
+GROUP BY grade_student_id;
 
 SELECT
 grade_student_id,
 grade_course_id
-from grades
-order by grade_course_id;
+FROM grades
+ORDER BY grade_course_id;
 
 SELECT
 AVG(grade),
 grade_course_id
-from grades
-group by grade_course_id;
+FROM grades
+GROUP BY grade_course_id;
 
 SELECT 
 grade_student_id,
 grade_professor_id
-from grades;
+FROM grades;
