@@ -18,6 +18,9 @@ grade_course_id
 from grades
 order by grade_course_id;
 
-
-
+SELECT
+AVG(grade),
+grade_course_id
+from grades
+group by grade_course_id;
 
