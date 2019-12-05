@@ -25,5 +25,9 @@ SELECT
 grade_student_id,
 professor_id,
 grade_course_id
-from grades, professors;
+from grades, professors
+order by grade_course_id;
+
+
+
 
