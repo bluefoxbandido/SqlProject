@@ -1,0 +1,29 @@
+SELECT * FROM school_sql_project_schema.grades;
+
+
+SELECT
+AVG(grade)
+from grades, professors 
+group by professor_id;
+
+SELECT 
+MAX(grade)
+from grades
+group by grade_student_id;
+
+SELECT 
+*
+from grades
+group by grade_course_id;
+
+SELECT 
+AVG(grade)
+FROM grades
+group by grade_course_id;
+
+SELECT
+grade_student_id,
+professor_id,
+grade_course_id
+from grades, professors;
+
