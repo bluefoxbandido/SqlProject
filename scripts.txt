@@ -2,26 +2,36 @@ SELECT * FROM school_sql_project_schema.grades;
 
 SELECT
 AVG(grade), 
-grade_professor_id
+professor_name
 FROM grades
+JOIN professors
+ON grades.grade_professor_id = professors.professor_id
 GROUP BY grade_professor_id;
 
 SELECT 
 MAX(grade),
-grade_student_id
+student_name
 FROM grades
+JOIN students
+ON students.student_id = grades.grade_student_id
 GROUP BY grade_student_id;
 
 SELECT
-grade_student_id,
-grade_course_id
+student_name,
+course_name
 FROM grades
+JOIN students
+ON grades.grade_student_id = students.student_id
+JOIN courses
+ON courses.course_id = grades.grade_course_id
 ORDER BY grade_course_id;
 
 SELECT
 AVG(grade),
-grade_course_id
+course_name
 FROM grades
+JOIN courses
+ON grades.grade_course_id = courses.course_id
 GROUP BY grade_course_id;
 
 SELECT student_name, COUNT(grade_student_id), professor_name
