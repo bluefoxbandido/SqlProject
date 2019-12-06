@@ -1,4 +1,12 @@
-SELECT * FROM school_sql_project_schema.grades;
+SELECT student_name, grade, course_name, professor_name 
+FROM 
+school_sql_project_schema.grades
+JOIN students
+ON students.student_id = grades.grade_student_id
+JOIN courses
+ON courses.course_id = grades.grade_course_id
+JOIN professors
+ON professors.professor_id = grades.grade_professor_id;
 
 SELECT
 AVG(grade), 
