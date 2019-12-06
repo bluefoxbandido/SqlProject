@@ -24,7 +24,7 @@ grade_course_id
 FROM grades
 GROUP BY grade_course_id;
 
-SELECT 
-grade_student_id,
-grade_professor_id
-FROM grades;
+SELECT grade_student_id, COUNT(grade_student_id), grade_professor_id, grade_course_id
+FROM grades
+GROUP BY grade_student_id
+ORDER BY COUNT(grade_student_id) DESC, grade_professor_id;
