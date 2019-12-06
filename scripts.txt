@@ -24,8 +24,12 @@ grade_course_id
 FROM grades
 GROUP BY grade_course_id;
 
-SELECT grade_student_id, COUNT(grade_student_id), grade_professor_id
+SELECT student_name, COUNT(grade_student_id), professor_name
 FROM grades
+JOIN students
+ON students.student_id = grades.grade_student_id
+JOIN professors
+ON grades.grade_professor_id = professors.professor_id
 GROUP BY grade_student_id
 ORDER BY COUNT(grade_student_id) DESC, grade_professor_id
 LIMIT 1;
